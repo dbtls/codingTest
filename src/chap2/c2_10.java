@@ -3,43 +3,23 @@ package chap2;
 import java.util.Scanner;
 
 public class c2_10 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         int num = kb.nextInt();
-        int[][] nums = new int[num][num];
-        for(int i=0;i<num;i++){
-            for(int j=0;j<num;j++){
+        int[][] nums = new int[num + 2][num + 2];
+        for (int i = 1; i < num + 1; i++) {
+            for (int j = 1; j < num + 1; j++) {
                 nums[i][j] = kb.nextInt();
-
             }
         }
-        int maxX=0;
-        int max=0;
-        int[] addY=new int[num];
-        int[] addCross = new int[2];
-        for(int i=0;i<num;i++){
-            int addX=0;
-            for(int j=0;j<num;j++){
-                addX+=nums[i][j];
-                addY[j]+=nums[i][j];
-                if(i==j){
-                    addCross[0]+=nums[i][j];
-                }
-                if(i+j==num-1){
-                    addCross[1]+=nums[i][j];
-                }
-            }
-            if(maxX<addX){
-                maxX=addX;
+        int answer = 0;
+        for (int i = 1; i < num + 1; i++) {
+            for (int j = 1; j < num + 1; j++) {
+                if (nums[i][j] > nums[i][j - 1] && nums[i][j] > nums[i][j + 1] && nums[i][j] > nums[i + 1][j] && nums[i][j] > nums[i - 1][j])
+                    answer++;
             }
         }
-        max = maxX>addCross[0]?maxX :addCross[0];
-        max = max>addCross[1]?max : addCross[1];
-        for(int i=0;i<num;i++){
-            if(max<addY[i])
-                max=addY[i];
-        }
-        System.out.println(max);
+        System.out.println(answer);
     }
 }
 
@@ -47,14 +27,18 @@ public class c2_10 {
 
 
 /*
-9. 격자판 최대합
+10. 봉우리
 설명
 
-5*5 격자판에 아래롸 같이 숫자가 적혀있습니다.
+지도 정보가 N*N 격자판에 주어집니다. 각 격자에는 그 지역의 높이가 쓰여있습니다.
+
+각 격자판의 숫자 중 자신의 상하좌우 숫자보다 큰 숫자는 봉우리 지역입니다. 봉우리 지역이 몇 개 있는 지 알아내는 프로그램을 작성하세요.
+
+격자의 가장자리는 0으로 초기화 되었다고 가정한다.
+
+만약 N=5 이고, 격자판의 숫자가 다음과 같다면 봉우리의 개수는 10개입니다.
 
 Image1.jpg
-
-N*N의 격자판이 주어지면 각 행의 합, 각 열의 합, 두 대각선의 합 중 가 장 큰 합을 출력합니다.
 
 
 입력
@@ -66,18 +50,18 @@ N*N의 격자판이 주어지면 각 행의 합, 각 열의 합, 두 대각선�
 
 출력
 
-최대합을 출력합니다.
+봉우리의 개수를 출력하세요.
 
 
 예시 입력 1
 
 5
-10 13 10 12 15
-12 39 30 23 11
-11 25 50 53 15
-19 27 29 37 27
-19 13 30 13 19
+5 3 7 2 3
+3 7 1 6 1
+7 2 5 3 4
+4 3 6 4 1
+8 7 3 5 2
 예시 출력 1
 
-155
+10
  */
