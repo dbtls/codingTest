@@ -6,31 +6,32 @@ public class p2_12 {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int m = sc.nextInt();
-        int[][] arr = new int[m][n];
-
-        int[][] pos = new int[m][n+1];
-
-        for (int i = 0; i < m; i++){
-            for (int j = 0; j < n; j++){
-                arr[i][j] = sc.nextInt();
-                // arr[i][j]는 j번째 등수 학생의 번호임 (예: 3 4 1 2에서 j=0이면 3번 학생)
-                pos[i][arr[i][j]] = j;
+        int[][] grades = new int[m][n];
+        boolean[][] isMento = new boolean[n][n];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                isMento[i][j]=true;
             }
         }
 
-        int answer = 0;
-        for (int a = 1; a <= n; a++){
-            for (int b = 1; b <= n; b++){
-                if(a == b) continue;
-                boolean valid = true;
-                for (int i = 0; i < m; i++){
-                    if(pos[i][a] >
-                            pos[i][b]){
-                        valid = false;
-                        break;
-                    }
+        for(int i =0; i< m;i++){
+            for(int j=0;j<n;j++){
+                grades[i][j]= sc.nextInt();
+            }
+        }
+        for(int i =0; i< m;i++){
+            for(int j=n-1;j>=0;j--){
+                for(int z=0;z<j;z++){
+                    isMento[grades[i][j]-1][grades[i][z]-1]=false;
                 }
-                if(valid) answer++;
+            }
+        }
+        int answer=0;
+        for(int i =0; i<n;i++){
+            for(int j=0;j<n;j++){
+                if(i!=j&&isMento[i][j]==true){
+                    answer++;
+                }
             }
         }
         System.out.println(answer);
@@ -78,4 +79,10 @@ M번의 수학성적이 주어지면 멘토와 멘티가 되는 짝을 만들 �
 예시 출력 1
 
 3
+
+힌트
+
+출력설명
+
+(3, 1), (3, 2), (4, 2)와 같이 3가지 경우의 (멘토, 멘티) 짝을 만들 수 있다.
  */
