@@ -1,12 +1,41 @@
 package chap4;
 
-import java.util.Collections;
 import java.util.Scanner;
 import java.util.TreeSet;
 
 public class c4_5 {
     public static void main(String[] args){
         Scanner kb = new Scanner(System.in);
+        int n = kb.nextInt();
+        int k = kb.nextInt();
+        int[] nums= new int[n];
+        TreeSet<Integer> tree = new TreeSet<>();
+        for(int i=0;i<n;i++){
+            nums[i]=kb.nextInt();
+        }
+
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                for(int z=j+1;z<n;z++){
+                    tree.add(nums[i]+nums[j]+nums[z]);
+                }
+            }
+        }
+        int cnt=0;
+        for(int i : tree){
+            cnt++;
+            if(cnt==tree.size()-k+1){
+                System.out.println(i);
+                break;
+            }
+
+        }
+        if(cnt>tree.size()-k+1){
+            System.out.println(-1);
+        }
+
+
+        /*Scanner kb = new Scanner(System.in);
         int n1 = kb.nextInt();
         int n2 = kb.nextInt();
         int[] nums = new int[n1];
@@ -30,8 +59,8 @@ public class c4_5 {
             if(cnt == n2){
                 System.out.println(answer);
                 return;
-            }       
-        }
+            }
+        }*/
     }
 }
 
