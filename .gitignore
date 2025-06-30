@@ -1,8 +1,17 @@
+# IntelliJ 설정
 .idea/
 *.iml
 
+# Build output
 out/
+build/
+target/
 *.class
 
+# Gradle
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# OS files
 .DS_Store
 Thumbs.db
