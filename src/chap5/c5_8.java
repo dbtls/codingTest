@@ -6,24 +6,37 @@ import java.util.Scanner;
 public class c5_8 {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
-        LinkedList<Character> list = new LinkedList<>();
-        String subject = kb.next();
-        String k = kb.next();
-        char[] ch1 = subject.toCharArray();
-        char[] ch2 = k.toCharArray();
-        for(char a : ch1){
-            list.add(a);
+        LinkedList<int[]> list = new LinkedList<>();
+        int n = kb.nextInt();
+        int m = kb.nextInt();
+        for(int i=0;i<n;i++){
+            int num = kb.nextInt();
+            //{순서 : 위험도} 로 저장
+            list.add(new int[]{i,num});
         }
-        for(int i=0;i<ch2.length;i++){
-            char current = ch2[i];
-            if(current==list.getFirst()){
+        int answer=0;
+        int removeNum=-1;
+        while(removeNum!=m){
+            int max = list.getFirst()[1];
+            boolean isMax=true;
+            for(int[] a : list){
+                if(max<a[1]){
+                    isMax=false;
+                    break;
+                }
+            }
+            if(isMax){
+                answer++;
+                removeNum= list.getFirst()[0];
                 list.removeFirst();
             }
-            if(list.isEmpty())
-                break;
+            else{
+                int[] a =list.removeFirst();
+                list.add(a);
+            }
         }
-        String answer  = (list.isEmpty())? "YES" : "NO";
         System.out.println(answer);
+
 
     }
 }
