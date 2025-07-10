@@ -17,4 +17,5 @@ public class c6_1 {
             System.out.print(a+" ");
         }
     }
+
 }
