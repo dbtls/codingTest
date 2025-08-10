@@ -1,42 +1,27 @@
 package chap6;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class c6_4 {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
-        int n = kb.nextInt(); // 캐시 크기
-        int k = kb.nextInt(); // 작업 수
-        int[] cache = new int[n];
+        int n = kb.nextInt();
+        int k = kb.nextInt();
         int[] arr = new int[k];
-
         for (int i = 0; i < k; i++) {
             arr[i] = kb.nextInt();
         }
 
-        for (int i = 0; i < k; i++) {
-            int current = arr[i];
-            int pos = -1;
+        LinkedList<Integer> cache = new LinkedList<>();
 
-            for (int j = 0; j < n; j++) {
-                if (cache[j] == current) {
-                    pos = j;
-                    break;
-                }
+
+        for (int x : arr) {
+            if (cache.contains(x)) {
+                cache.remove((Integer)x); // 해당 값을 직접 제거
+            } else if (cache.size() == n) {
+                cache.removeLast(); // LRU 제거
             }
-
-            if (pos != -1) {
-                for (int j = pos; j >= 1; j--) {
-                    cache[j] = cache[j - 1];
-                }
-            }
-
-            else {
-                for (int j = n - 1; j >= 1; j--) {
-                    cache[j] = cache[j - 1];
-                }
-            }
-
-            cache[0] = current;
+            cache.addFirst(x); // 항상 맨 앞에 삽입
         }
 
         // 출력
@@ -44,6 +29,7 @@ public class c6_4 {
             System.out.print(x + " ");
         }
     }
+
 }
 
 /*
@@ -61,6 +47,7 @@ LRU 알고리즘은 Least Recently Used 의 약자로 직역하자면 가장 최
 캐시에서 작업을 제거할 때 가장 오랫동안 사용하지 않은 것을 제거하겠다는 알고리즘입니다.
 
 Image1.jpg
+
 
 캐시의 크기가 주어지고, 캐시가 비어있는 상태에서 N개의 작업을 CPU가 차례로 처리한다면 N개의 작업을 처리한 후
 
