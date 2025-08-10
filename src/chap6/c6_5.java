@@ -1,10 +1,7 @@
 package chap6;
-import java.util.LinkedList;
-import java.util.Scanner;
 
 public class c6_5 {
     public static void main(String[] args) {
-        Scanner kb = new Scanner(System.in);
 
     }
 
