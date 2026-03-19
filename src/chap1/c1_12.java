@@ -37,8 +37,24 @@ package chap1;
 예시 출력 1
 COOL
 */
+import java.io.*;
 public class c1_12 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int num = Integer.parseInt(br.readLine());
+        String str = br.readLine();
+        String answer="";
+        for (int i = 0; i < num; i++) {
+            String substring = str.substring(7 * i, 7 * i + 7);
 
+            int ans = 0;
+            for (char c : substring.toCharArray()) {
+                if (c == '#') ans = ans * 2 + 1;
+                else ans = ans * 2;
+            }
+
+            answer += (char) ans;
+        }
+        System.out.println(answer);
     }
 }

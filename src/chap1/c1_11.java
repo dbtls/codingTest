@@ -27,8 +27,32 @@ KSTTTSEEKFKKKDJJGG
 예시 출력 2
 KST3SE2KFK3DJ2G2
 */
+import java.io.*;
 public class c1_11 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        char now = str.charAt(0);
+        int count=0;
+        String answer="";
 
+        for(char c : str.toCharArray()){
+            if(c==now){
+                count++;
+            }
+            else{
+                answer+=now;
+                if(count>1) {
+                    answer += count;
+                }
+                count=1;
+                now=c;
+            }
+        }
+        answer+=now;
+        if(count>1) {
+            answer += count;
+        }
+        System.out.println(answer);
     }
 }

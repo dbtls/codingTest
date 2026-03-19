@@ -25,8 +25,9 @@ N개의 수로 이루어진 수열이 주어집니다.
 예시 출력 1
 3
 */
+import java.io.*;
 public class c3_4 {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

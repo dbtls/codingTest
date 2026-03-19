@@ -30,8 +30,9 @@ N개의 좌표를 정렬하여 출력하세요.
 2 7
 3 6
 */
+import java.io.*;
 public class c6_7 {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

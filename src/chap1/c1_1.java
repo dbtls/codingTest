@@ -22,8 +22,19 @@ c
 예시 출력 1
 2
 */
+import java.io.*;
 public class c1_1 {
-    public static void main(String[] args) {
-        System.out.println("hello");
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s1 = br.readLine().toUpperCase();
+        String s2 = br.readLine().toUpperCase();
+        int answer = 0;
+        for(int i=0;i<s1.length();i++){
+            if(s1.charAt(i) == s2.charAt(0)){
+                answer++;
+                }
+            }
+        System.out.print(answer);
+
     }
 }

@@ -25,8 +25,24 @@ doog
 emiT
 giB
 */
+import java.io.*;
 public class c1_4 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int count = Integer.parseInt(br.readLine());
+        String[] answer = new String[count];
+        for(int i=0;i<count;i++){
+            char[] str = br.readLine().toCharArray();
+            for(int j=0;j<str.length/2;j++){
+                char temp = str[j];
+                str[j] = str[str.length-j-1];
+                str[str.length-j-1] = temp;
+                answer[i] = String.valueOf(str);
+            }
+        }
+        for(int i=0;i<count;i++){
+            System.out.println(answer[i]);
+        }
 
     }
 }

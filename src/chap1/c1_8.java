@@ -22,8 +22,29 @@ found7, time: study; Yduts; emit, 7Dnuof
 예시 출력 1
 YES
 */
+import java.io.*;
 public class c1_8 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine().replaceAll(" ","").toUpperCase();
+        int lt = 0;
+        int rt = str.length()-1;
+        String answer = "YES";
+        while(lt<rt){
+            if(!Character.isAlphabetic(str.charAt(lt))) lt++;
+            else if(!Character.isAlphabetic(str.charAt(rt))) rt--;
+            else{
+                if(str.charAt(lt)==str.charAt(rt)){
+                    lt++;
+                    rt--;
+                }
+                else {
+                    answer = "NO";
+                    break;
+                }
+            }
 
+        }
+        System.out.println(answer);
     }
 }

@@ -24,8 +24,9 @@ C마리의 말을 N개의 마구간에 배치했을 때 가장 가까운 두 말
 예시 출력 1
 3
 */
+import java.io.*;
 public class c6_10 {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

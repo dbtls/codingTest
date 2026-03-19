@@ -20,8 +20,19 @@ StuDY
 예시 출력 1
 sTUdy
 */
+import java.io.*;
 public class c1_2 {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s1 = br.readLine();
+        String answer ="";
+        for(int i=0;i<s1.length();i++){
+            if((s1.charAt(i) - 'A') <26){
+                answer+=s1.toLowerCase().charAt(i);
+            }
+            else
+                answer+=s1.toUpperCase().charAt(i);
+        }
+        System.out.println(answer);
     }
 }

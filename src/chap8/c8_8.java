@@ -25,8 +25,9 @@ N은 가장 윗줄에 있는 숫자의 개수를 의미하며 F는 가장 밑에
 예시 출력 1
 3 1 2 4
 */
+import java.io.*;
 public class c8_8 {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

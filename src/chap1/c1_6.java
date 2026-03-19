@@ -20,8 +20,47 @@ ksekkset
 예시 출력 1
 kset
 */
-public class c1_6 {
-    public static void main(String[] args) {
+/* boolean 배열 방식 ( 처음 한 방식)
+import java.io.*;
+import java.util.*;
 
+public class c1_6 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        boolean[] isUsed = new boolean[26];
+        for(int i=0; i<26;i++){
+            isUsed[i]=false;
+        }
+        String str = br.readLine();
+        String answer="";
+        for(int i=0;i<str.length();i++){
+            if(!isUsed[str.charAt(i)-'a']){
+                isUsed[str.charAt(i)-'a']=true;
+                answer+=str.charAt(i);
+            }
+        }
+        System.out.println(answer);
+    }
+}
+*/
+/*
+hashset방식 (좀더 보편적이라고 함)
+ */
+import java.io.*;
+import java.util.*;
+
+public class c1_6 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        Set<Character> set = new HashSet<>();
+        String answer="";
+        String str = br.readLine();
+        for(int i=0;i<str.length();i++){
+            if(!set.contains(str.charAt(i))){
+                set.add(str.charAt(i));
+                answer+=str.charAt(i);
+            }
+        }
+        System.out.println(answer);
     }
 }

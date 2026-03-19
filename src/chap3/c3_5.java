@@ -24,8 +24,9 @@ N입력으로 양의 정수 N이 입력되면 2개 이상의 연속된 자연수
 예시 출력 1
 3
 */
+import java.io.*;
 public class c3_5 {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

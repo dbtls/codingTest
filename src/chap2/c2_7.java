@@ -28,8 +28,9 @@ OX 문제는 맞거나 틀린 두 경우의 답을 가지는 문제를 말한다
 예시 출력 1
 10
 */
+import java.io.*;
 public class c2_7 {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

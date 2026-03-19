@@ -28,8 +28,9 @@ package chap8;
 예시 출력 1
 41
 */
+import java.io.*;
 public class c8_3 {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

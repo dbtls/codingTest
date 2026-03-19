@@ -28,8 +28,9 @@ LRU 알고리즘은 Least Recently Used 의 약자로 직역하자면 가장 최
 예시 출력 1
 7 5 3 2 6
 */
+import java.io.*;
 public class c6_4 {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

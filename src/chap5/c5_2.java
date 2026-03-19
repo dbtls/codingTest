@@ -19,8 +19,9 @@ package chap5;
 예시 출력 1
 EFLM
 */
+import java.io.*;
 public class c5_2 {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

@@ -24,8 +24,9 @@ N개의 원소로 구성된 자연수 집합이 주어지면, 이 집합을 두 
 예시 출력 1
 YES
 */
+import java.io.*;
 public class c8_1 {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

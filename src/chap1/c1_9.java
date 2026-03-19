@@ -21,8 +21,18 @@ g0en2T0s8eSoft
 예시 출력 1
 208
 */
+import java.io.*;
 public class c1_9 {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        int answer=0;
+        for(char c : str.toCharArray()){
+            //Character.isDigit(c) 가 더 정확함
+            if(!Character.isAlphabetic(c)){
+                answer= answer * 10 + c -'0';
+            }
+        }
+        System.out.println(answer);
     }
 }

@@ -26,8 +26,9 @@ package chap3;
 예시 출력 1
 8
 */
+import java.io.*;
 public class c3_6 {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

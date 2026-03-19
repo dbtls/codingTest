@@ -22,8 +22,9 @@ N명의 학생의 국어점수가 입력되면 각 학생의 등수를 입력된
 예시 출력 1
 4 3 2 1 5
 */
+import java.io.*;
 public class c2_8 {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

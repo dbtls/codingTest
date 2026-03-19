@@ -20,8 +20,9 @@ package chap2;
 예시 출력 1
 1 1 2 3 5 8 13 21 34 55
 */
+import java.io.*;
 public class c2_4 {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

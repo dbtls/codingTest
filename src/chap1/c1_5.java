@@ -20,8 +20,28 @@ a#b!GE*T@S
 예시 출력 1
 S#T!EG*b@a
 */
+import java.io.*;
 public class c1_5 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        char[] cha = br.readLine().toCharArray();
+        int lt = 0;
+        int rt = cha.length-1;
+        while(lt<rt){
+            if(!Character.isAlphabetic(cha[lt])) lt++;
+            else if(!Character.isAlphabetic(cha[rt])) rt--;
+            else {
+                char temp = cha[lt];
+                cha[lt] = cha[rt];
+                cha[rt] = temp;
+                rt--;
+                lt++;
+            }
 
+        }
+        System.out.println(String.valueOf(cha));
     }
 }
+/*
+투포인터 방식을 사용해야함.
+ */

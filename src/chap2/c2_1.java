@@ -23,8 +23,31 @@ N개의 정수를 입력받아, 자신의 바로 앞 수보다 큰 수만 출력
 예시 출력 1
 7 9 6 12
 */
-public class c2_1 {
-    public static void main(String[] args) {
+import java.io.*;
+import java.util.*;
 
+public class c2_1 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int n = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        StringBuilder sb = new StringBuilder();
+
+        int prev = Integer.parseInt(st.nextToken());
+        sb.append(prev).append(" ");
+
+        for (int i = 1; i < n; i++) {
+            int cur = Integer.parseInt(st.nextToken());
+
+            if (cur > prev) {
+                sb.append(cur).append(" ");
+            }
+
+            prev = cur;
+        }
+
+        System.out.println(sb);
     }
 }
