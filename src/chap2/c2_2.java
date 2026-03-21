@@ -13,17 +13,34 @@ package chap2;
 
 출력
 선생님이 볼 수 있는 최대학생수를 출력한다.
-
+ds
 예시 입력 1
 8
 130 135 148 140 145 150 150 153
-
+ef`
 예시 출력 1
 5
 */
 import java.io.*;
+import java.util.StringTokenizer;
 public class c2_2 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int n = Integer.parseInt(br.readLine().trim());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int count = 0;
+        int maxHeight = 0;
+
+        for (int i = 0; i < n; i++) {
+            int height = Integer.parseInt(st.nextToken());
+            if (height > maxHeight) {
+                count++;
+                maxHeight = height;
+            }
+        }
+
+        System.out.println(count);
     }
 }
