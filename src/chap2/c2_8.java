@@ -23,8 +23,32 @@ N명의 학생의 국어점수가 입력되면 각 학생의 등수를 입력된
 4 3 2 1 5
 */
 import java.io.*;
+import java.util.*;
+
 public class c2_8 {
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int n = Integer.parseInt(br.readLine());
+        int[] score = new int[n];
+        int[] rank = new int[n];
+
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < n; i++) {
+            score[i] = Integer.parseInt(st.nextToken());
+            rank[i] = 1; // 처음엔 전부 1등으로 시작
+        }
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (score[j] > score[i]) {
+                    rank[i]++;
+                }
+            }
+        }
+
+        for (int i = 0; i < n; i++) {
+            System.out.print(rank[i] + " ");
+        }
     }
 }

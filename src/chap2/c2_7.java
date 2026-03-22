@@ -29,8 +29,23 @@ OX 문제는 맞거나 틀린 두 경우의 답을 가지는 문제를 말한다
 10
 */
 import java.io.*;
+import java.util.*;
 public class c2_7 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int answer = 0;
+        int count = 0;
+        for(int i=0;i<n;i++){
+            if(st.nextToken().charAt(0)!='1'){
+                count=0;
+            }
+            else{
+                count++;
+                answer+=count;
+            }
+        }
+        System.out.println(answer);
     }
 }

@@ -32,8 +32,32 @@ B
 D
 */
 import java.io.*;
+import java.util.*;
 public class c2_3 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int[] num = new int[n];
+        char[] answer = new char[n];
+
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for(int i=0;i<n;i++){
+            num[i]=Integer.parseInt(st.nextToken());
+        }
+        st = new StringTokenizer(br.readLine());
+        for(int i=0;i<n;i++){
+            int p =Integer.parseInt(st.nextToken());
+            if(p==num[i]){
+                answer[i] = 'D';
+            }
+            else if(num[i]-p==-1 || num[i]-p==2){
+                answer[i]='B';
+            }
+            else
+                answer[i]='A';
+        }
+        for(char c : answer){
+            System.out.println(c);
+        }
     }
 }

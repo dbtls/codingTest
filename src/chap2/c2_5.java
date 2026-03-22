@@ -24,5 +24,23 @@ import java.io.*;
 public class c2_5 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        boolean[] bool = new boolean[n+1];
+        int answer=0;
+        for(int i=0;i<=n;i++){
+            bool[i]=false;
+        }
+        for(int i=2;i<=n;i++){
+            if(bool[i]==false){
+                answer++;
+                for(int j=i;j<=n;j+=i){
+                    if(j%i==0){
+                        bool[j]=true;
+                    }
+                }
+            }
+
+        }
+        System.out.println(answer);
     }
 }

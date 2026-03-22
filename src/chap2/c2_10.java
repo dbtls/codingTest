@@ -30,8 +30,28 @@ package chap2;
 10
 */
 import java.io.*;
+import java.util.*;
 public class c2_10 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int[][] num = new int[n+2][n+2];
+        for(int i=1;i<n;i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            for(int j=1;j<n;j++){
+                num[i][j] = Integer.parseInt(st.nextToken());
+            }
+        }
+        int answr=0;
+        for(int i=1;i<n;i++) {
+            for(int j=1;j<n;j++){
+                if(num[i][j]>num[i-1][j] &&
+                        num[i][j]>num[i+1][j] &&
+                        num[i][j]>num[i][j-1] &&
+                        num[i][j]>num[i][j+1] )
+                    answr++;
+            }
+        }
+
     }
 }
