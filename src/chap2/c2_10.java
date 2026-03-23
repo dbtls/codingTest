@@ -42,16 +42,17 @@ public class c2_10 {
                 num[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-        int answr=0;
+        int answer=0;
         for(int i=1;i<n;i++) {
             for(int j=1;j<n;j++){
                 if(num[i][j]>num[i-1][j] &&
                         num[i][j]>num[i+1][j] &&
                         num[i][j]>num[i][j-1] &&
                         num[i][j]>num[i][j+1] )
-                    answr++;
+                    answer++;
             }
         }
+        System.out.println(answer);
 
     }
 }

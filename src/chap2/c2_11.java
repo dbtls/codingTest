@@ -38,8 +38,45 @@ package chap2;
 4
 */
 import java.io.*;
+import java.util.*;
 public class c2_11 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int[] num = new int[n];
+        int[][] students = new int[n][5];
+        for(int i=0;i<n;i++){
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            for(int j=0;j<5;j++){
+                students[i][j]= Integer.parseInt(st.nextToken());
+            }
+        }
+        int max =0;
+        int answer =1;
+
+        for(int i=0;i<n;i++){
+            int count=0;
+
+            for(int j=0;j<n;j++){
+                if(i==j)
+                    continue;
+                for(int k=0;k<5;k++){
+                    if(students[i][k]==students[j][k]){
+                        count++;
+                        break;
+                    }
+                }
+            }
+            num[i]=count;
+            if(num[i]>max){
+                max=num[i];
+                answer=i+1;
+            }
+        }
+        System.out.println(answer);
+
+
+
+
     }
 }
