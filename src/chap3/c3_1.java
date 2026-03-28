@@ -27,8 +27,46 @@ package chap3;
 1 2 3 3 5 6 7 9
 */
 import java.io.*;
+import java.util.*;
+
 public class c3_1 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int n = Integer.parseInt(br.readLine());
+        int[] arr1 = new int[n];
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < n; i++) {
+            arr1[i] = Integer.parseInt(st.nextToken());
+        }
+
+        int m = Integer.parseInt(br.readLine());
+        int[] arr2 = new int[m];
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < m; i++) {
+            arr2[i] = Integer.parseInt(st.nextToken());
+        }
+
+        StringBuilder sb = new StringBuilder();
+        int p1 = 0;
+        int p2 = 0;
+
+        while (p1 < n && p2 < m) {
+            if (arr1[p1] <= arr2[p2]) {
+                sb.append(arr1[p1++]).append(" ");
+            } else {
+                sb.append(arr2[p2++]).append(" ");
+            }
+        }
+
+        while (p1 < n) {
+            sb.append(arr1[p1++]).append(" ");
+        }
+
+        while (p2 < m) {
+            sb.append(arr2[p2++]).append(" ");
+        }
+
+        System.out.println(sb);
     }
 }

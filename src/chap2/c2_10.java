@@ -51,6 +51,7 @@ public class c2_10 {
                         num[i][j]>num[i][j+1] )
                     answer++;
             }
+
         }
         System.out.println(answer);
 
