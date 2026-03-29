@@ -25,8 +25,27 @@ BACBACCACCBDEDE
 C
 */
 import java.io.*;
+import java.util.*;
 public class c4_1 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        char[] arr = br.readLine().toCharArray();
+
+        HashMap<Character,Integer> hashMap= new HashMap<>();
+
+        for(int i=0;i<n;i++){
+            hashMap.put(arr[i], hashMap.getOrDefault(arr[i], 0) + 1);
+        }
+
+        int max=0;
+        char answer=' ';
+        for(char key : hashMap.keySet()){
+            if(max < hashMap.get(key)) {
+                max = hashMap.get(key);
+                answer = key;
+            }
+        }
+        System.out.println(answer);
     }
 }

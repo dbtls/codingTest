@@ -32,8 +32,28 @@ Caaab
 NO
 */
 import java.io.*;
+import java.util.*;
 public class c4_2 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        char[] arr1 = br.readLine().toCharArray();
+        char[] arr2 = br.readLine().toCharArray();
+
+        Map<Character,Integer> hash1 = new HashMap<>();
+        Map<Character,Integer> hash2 = new HashMap<>();
+
+        for(int i=0;i<arr1.length;i++){
+            hash1.put(arr1[i],hash1.getOrDefault(arr1[i],0)+1);
+            hash2.put(arr2[i],hash2.getOrDefault(arr2[i],0)+1);
+        }
+        for(int i=0;i<arr1.length;i++){
+            hash1.put(arr1[i],hash1.getOrDefault(arr1[i],0)+1);
+            hash1.put(arr2[i],hash1.getOrDefault(arr2[i],0)-1);
+        }
+
+        if(hash1.equals(hash2))
+            System.out.println("YES");
+        else
+            System.out.println("NO");
     }
 }

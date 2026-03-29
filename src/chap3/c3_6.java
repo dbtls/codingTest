@@ -27,8 +27,32 @@ package chap3;
 8
 */
 import java.io.*;
+import java.util.*;
 public class c3_6 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n= Integer.parseInt(st.nextToken());
+        int k= Integer.parseInt(st.nextToken());
+        int[] arr = new int[n];
+        st = new StringTokenizer(br.readLine());
+        for(int i=0;i<n;i++){
+            arr[i]=Integer.parseInt(st.nextToken());
+        }
+
+        int answer=0;
+        int p1=0;
+        int cnt=0;
+        for(int i=0;i<n;i++){
+            if(arr[i]==0) cnt++;
+            while(cnt>k){
+                if(arr[p1]==0) cnt--;
+                p1++;
+            }
+            if(i-p1+1>answer)
+                answer=i-p1+1;
+        }
+        System.out.println(answer);
+
     }
 }

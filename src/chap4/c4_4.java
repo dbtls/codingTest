@@ -23,8 +23,41 @@ abc
 3
 */
 import java.io.*;
+import java.util.*;
 public class c4_4 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        char[] arr1 = br.readLine().toCharArray();
+        char[] arr2 = br.readLine().toCharArray();
+
+        int n = arr1.length;
+        int k = arr2.length;
+
+
+        Map<Character, Integer> map1 = new HashMap<>();
+        Map<Character, Integer> map2 = new HashMap<>();
+
+        for(int i=0;i<k;i++){
+            map1.put(arr1[i],map1.getOrDefault(arr1[i],0)+1);
+            map2.put(arr2[i],map2.getOrDefault(arr2[i],0)+1);
+        }
+        int answer = 0;
+        if(map1.equals(map2)){
+            answer++;
+        }
+
+        for(int i=1;i<n-k+1;i++){
+            map1.put(arr1[i+k-1],map1.getOrDefault(arr1[i+k-1],0)+1);
+            map1.put(arr1[i-1],map1.getOrDefault(arr1[i-1],0)-1);
+            if(map1.get(arr1[i-1]) ==0){
+                map1.remove(arr1[i-1]);
+            }
+            if(map1.equals(map2)){
+                answer++;
+            }
+        }
+        System.out.println(answer);
+
+
     }
 }

@@ -28,5 +28,31 @@ import java.io.*;
 public class c3_5 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int[] arr= new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=i+1;
+        }
+
+        int p1=0;
+        int sum =0;
+        int answer=0;
+
+        for(int i=0;i<n;i++){
+            sum+=arr[i];
+            while(sum>=n){
+                if(sum==n){
+                    answer++;
+                    sum-=arr[p1];
+                    p1++;
+                }
+                else{
+                    sum-=arr[p1];
+                    p1++;
+                }
+            }
+        }
+
+        System.out.println(answer-1);
     }
 }

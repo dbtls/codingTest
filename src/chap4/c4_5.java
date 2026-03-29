@@ -24,8 +24,38 @@ package chap4;
 143
 */
 import java.io.*;
+import java.util.*;
 public class c4_5 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
+
+        int[] arr = new int[n];
+        Set<Integer> answer = new TreeSet<>(Collections.reverseOrder());
+        st = new StringTokenizer(br.readLine());
+        for(int i=0;i<n;i++){
+            arr[i]=Integer.parseInt(st.nextToken());
+        }
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                for(int l=j+1;l<n;l++){
+                    answer.add(arr[i]+arr[j]+arr[l]);
+                }
+            }
+        }
+        int count=0;
+        if(answer.size()<k){
+            System.out.println("-1");
+        }
+        else {
+            for (int x : answer) {
+                count++;
+                if (count == k) {
+                    System.out.println(x);
+                }
+            }
+        }
     }
 }
