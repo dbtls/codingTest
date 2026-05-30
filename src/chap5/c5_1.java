@@ -9,7 +9,7 @@ package chap5;
 (())() 이것은 괄호의 쌍이 올바르게 위치하는 거지만, (()()))은 올바른 괄호가 아니다.
 
 입력
-첫 번째 줄에 괄호 문자열이 입력됩니다. 문자열의 최대 길이는 30이다.
+첫 번째 줄에 괄호 문자열이 입력됩니다. 문자열의 최대 길이는 30 이다.
 
 출력
 첫 번째 줄에 YES, NO를 출력한다.
@@ -21,8 +21,34 @@ package chap5;
 NO
 */
 import java.io.*;
+import java.util.*;
+
 public class c5_1 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        char[] arr = br.readLine().toCharArray();
+        String answer = "YES";
+
+        Stack<Character> st = new Stack<>();
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]=='('){
+                st.push(arr[i]);
+            }
+            else{
+                if(st.isEmpty()){
+                    answer= "NO";
+                    break;
+                }
+                else
+                    st.pop();
+            }
+        }
+        if(!st.isEmpty()) {
+            answer = "NO";
+            System.out.println(answer);
+        }
+        else
+            System.out.println(answer);
+
     }
 }
