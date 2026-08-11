@@ -29,34 +29,5 @@ import java.util.*;
 
 public class c3_4 {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
-
-        int[] arr = new int[n];
-        st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < n; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
-        }
-
-        int p1 = 0;
-        int sum = 0;
-        int answer = 0;
-
-        for (int p2 = 0; p2 < n; p2++) {
-            sum += arr[p2];
-
-            while (sum >= m) {
-                if (sum == m) {
-                    answer++;
-                }
-                sum -= arr[p1];
-                p1++;
-            }
-        }
-
-        System.out.println(answer);
     }
 }

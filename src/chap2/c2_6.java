@@ -27,30 +27,5 @@ import java.io.*;
 import java.util.*;
 public class c2_6 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n= Integer.parseInt(br.readLine());
-        StringTokenizer st = new StringTokenizer (br.readLine());
-        int[] num = new int [n];
-        List<Integer> answer = new ArrayList<>();
-        for(int i=0;i<n;i++){
-            num[i] = Integer.parseInt(st.nextToken());
-            int n2 = 0;
-            while(num[i]>0){
-                n2=n2*10+num[i]%10;
-                num[i]/=10;
-            }
-            for(int k=2;k<n2;k++){
-                if (n2 % k == 0) {
-                    n2=0;
-                    break;
-                }
-            }
-            if (n2 != 0&&n2!=1) {
-                answer.add(n2);
-            }
-        }
-        for(int a : answer){
-            System.out.print(a+" ");
-        }
     }
 }

@@ -40,6 +40,5 @@ M번째 환자의 몇 번째로 진료받는지 출력하세요.
 import java.io.*;
 public class c5_8 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

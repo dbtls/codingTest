@@ -33,47 +33,5 @@ import java.util.*;
 
 public class c2_12 {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
-
-        int[][] arr = new int[m][n];
-        boolean[][] mento = new boolean[n + 1][n + 1];
-
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= n; j++) {
-                if (i != j) mento[i][j] = true;
-            }
-        }
-
-        for (int i = 0; i < m; i++) {
-            st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < n; j++) {
-                arr[i][j] = Integer.parseInt(st.nextToken());
-            }
-        }
-
-        // 각 시험에서 뒤에 있는 학생이 앞 학생의 멘토가 되는 경우는 불가능
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                for (int k = j + 1; k < n; k++) {
-                    int front = arr[i][j];
-                    int back = arr[i][k];
-
-                    mento[back][front] = false;
-                }
-            }
-        }
-
-        int answer = 0;
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= n; j++) {
-                if (mento[i][j]) answer++;
-            }
-        }
-
-        System.out.println(answer);
     }
 }

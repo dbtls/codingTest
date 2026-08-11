@@ -39,6 +39,5 @@ N×N 크기의 도시지도가 있습니다. 도시지도는 1×1크기의 격�
 import java.io.*;
 public class c8_14 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

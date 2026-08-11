@@ -33,6 +33,5 @@ N개의 좌표를 정렬하여 출력하세요.
 import java.io.*;
 public class c6_7 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

@@ -34,6 +34,5 @@ N명의 지원자가 주어지면 위의 선발원칙으로 최대 몇 명의 �
 import java.io.*;
 public class c9_1 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

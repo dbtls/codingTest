@@ -31,6 +31,5 @@ LRU 알고리즘은 Least Recently Used 의 약자로 직역하자면 가장 최
 import java.io.*;
 public class c6_4 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

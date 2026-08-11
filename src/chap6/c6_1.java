@@ -25,6 +25,5 @@ N개이 숫자가 입력되면 오름차순으로 정렬하여 출력하는 프�
 import java.io.*;
 public class c6_1 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

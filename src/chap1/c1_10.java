@@ -27,28 +27,5 @@ import java.io.*;
 import java.util.*;
 public class c1_10 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        String str=st.nextToken();
-        char ch = st.nextToken().charAt(0);
-        int count=1000;
-        int[] answer =new int[str.length()];
-        for(int i=0;i<answer.length;i++){
-            if(str.charAt(i)==ch) count=0;
-            answer[i]=count;
-            count++;
-        }
-        count=1000;
-        for(int i=answer.length-1;i>=0;i--){
-            if(str.charAt(i)==ch) count=0;
-            if(answer[i]>count) {
-                answer[i] = count;
-            }
-            count++;
-
-        }
-        for(int c : answer){
-            System.out.print(c+" ");
-        }
     }
 }

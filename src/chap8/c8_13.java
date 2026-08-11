@@ -34,6 +34,5 @@ N*N의 섬나라 아일랜드의 지도가 격자판의 정보로 주어집니�
 import java.io.*;
 public class c8_13 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

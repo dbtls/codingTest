@@ -31,6 +31,5 @@ DVD에는 총 N개의 곡이 들어가는데, DVD에 녹화할 때에는 라이�
 import java.io.*;
 public class c6_9 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

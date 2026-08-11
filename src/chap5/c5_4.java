@@ -24,6 +24,5 @@ package chap5;
 import java.io.*;
 public class c5_4 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

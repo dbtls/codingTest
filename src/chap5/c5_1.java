@@ -25,30 +25,5 @@ import java.util.*;
 
 public class c5_1 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        char[] arr = br.readLine().toCharArray();
-        String answer = "YES";
-
-        Stack<Character> st = new Stack<>();
-        for(int i=0;i<arr.length;i++){
-            if(arr[i]=='('){
-                st.push(arr[i]);
-            }
-            else{
-                if(st.isEmpty()){
-                    answer= "NO";
-                    break;
-                }
-                else
-                    st.pop();
-            }
-        }
-        if(!st.isEmpty()) {
-            answer = "NO";
-            System.out.println(answer);
-        }
-        else
-            System.out.println(answer);
-
     }
 }

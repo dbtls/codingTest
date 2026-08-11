@@ -10,7 +10,7 @@ package chap1;
 
 입력
 첫 줄에 문자열이 주어지고, 두 번째 줄에 문자가 주어진다.
-문자열은 영어 알파벳으로만 구성되어 있습니다.
+문자열은 영어 알파벳으로만 구성되어  있습니다.
 
 출력
 첫 줄에 해당 문자의 개수를 출력한다.
@@ -25,16 +25,7 @@ c
 import java.io.*;
 public class c1_1 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String s1 = br.readLine().toUpperCase();
-        String s2 = br.readLine().toUpperCase();
-        int answer = 0;
-        for(int i=0;i<s1.length();i++){
-            if(s1.charAt(i) == s2.charAt(0)){
-                answer++;
-                }
-            }
-        System.out.print(answer);
-
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));;
+        
     }
 }

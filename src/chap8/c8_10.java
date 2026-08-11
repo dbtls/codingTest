@@ -32,6 +32,5 @@ package chap8;
 import java.io.*;
 public class c8_10 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }

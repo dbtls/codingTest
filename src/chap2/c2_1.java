@@ -28,26 +28,5 @@ import java.util.*;
 
 public class c2_1 {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        int n = Integer.parseInt(br.readLine());
-        StringTokenizer st = new StringTokenizer(br.readLine());
-
-        StringBuilder sb = new StringBuilder();
-
-        int prev = Integer.parseInt(st.nextToken());
-        sb.append(prev).append(" ");
-
-        for (int i = 1; i < n; i++) {
-            int cur = Integer.parseInt(st.nextToken());
-
-            if (cur > prev) {
-                sb.append(cur).append(" ");
-            }
-
-            prev = cur;
-        }
-
-        System.out.println(sb);
     }
 }

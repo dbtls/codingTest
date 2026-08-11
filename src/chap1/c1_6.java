@@ -51,16 +51,5 @@ import java.util.*;
 
 public class c1_6 {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        Set<Character> set = new HashSet<>();
-        String answer="";
-        String str = br.readLine();
-        for(int i=0;i<str.length();i++){
-            if(!set.contains(str.charAt(i))){
-                set.add(str.charAt(i));
-                answer+=str.charAt(i);
-            }
-        }
-        System.out.println(answer);
     }
 }

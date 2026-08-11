@@ -31,39 +31,5 @@ import java.io.*;
 import java.util.*;
 public class c2_9 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine());
-        int[] n1 = new int[n];
-        int[] n2 = new int[n];
-        int[] n3 = new int[n];
-        for(int i=0;i<n;i++){
-            StringTokenizer st = new StringTokenizer ( br.readLine());
-            for(int j=0;j<n;j++){
-                int n4 = Integer.parseInt(st.nextToken());
-                n1[i]+=n4;
-                n2[j]+=n4;
-                if(i==j){
-                    n3[0]+=n4;
-                }
-                else if(j+i==n-1){
-                    n3[1]+=n4;
-                }
-            }
-        }
-        int answer=0;
-        for(int i=0;i<n;i++){
-            if(answer<n1[i]){
-                answer=n1[i];
-            }
-            if(answer<n2[i]){
-                answer=n2[i];
-            }
-            if(i<2&&answer<n3[i]){
-                answer=n3[i];
-            }
-        }
-        System.out.println(answer);
-
-
     }
 }

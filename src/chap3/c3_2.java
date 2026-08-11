@@ -30,42 +30,5 @@ import java.io.*;
 import java.util.*;
 public class c3_2 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n=Integer.parseInt(br.readLine());
-
-
-        int[] arr1= new int[n];
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        for(int i=0;i<n;i++){
-            arr1[i] = Integer.parseInt(st.nextToken());
-        }
-        Arrays.sort(arr1);
-        int m=Integer.parseInt(br.readLine());
-        int[] arr2= new int[m];
-        st = new StringTokenizer(br.readLine());
-        for(int i=0;i<m;i++){
-
-            arr2[i] = Integer.parseInt(st.nextToken());
-        }
-        Arrays.sort(arr2);
-        int p1=0;
-        int p2=0;
-        ArrayList<Integer> answer = new ArrayList<>();
-        while(p1<n && p2<m){
-            if(arr1[p1]<arr2[p2]){
-                p1++;
-            }
-            else if(arr1[p1]>arr2[p2]){
-                p2++;
-            }
-            else{
-                answer.add(arr1[p1]);
-                p1++;
-                p2++;
-            }
-        }
-        for(int a : answer){
-            System.out.print(a+" ");
-        }
     }
 }

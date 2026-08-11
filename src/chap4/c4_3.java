@@ -35,34 +35,5 @@ import java.io.*;
 import java.util.*;
 public class c4_3 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int n = Integer.parseInt(st.nextToken());
-        int k = Integer.parseInt(st.nextToken());
-
-        int[] arr = new int[n];
-
-
-        st = new StringTokenizer(br.readLine());
-        for(int i=0;i<n;i++){
-            arr[i] = Integer.parseInt(st.nextToken());
-        }
-        Map<Integer, Integer> hash = new HashMap<>();
-        StringBuilder answer = new StringBuilder();
-        for(int i=0;i<k;i++){
-            hash.put(arr[i],hash.getOrDefault(arr[i],0)+1);
-        }
-        answer.append(hash.size()).append(" ");
-
-        for(int i=1;i<n-k+1;i++){
-            hash.put(arr[i+k-1],hash.getOrDefault(arr[i+k-1],0)+1);
-            hash.put(arr[i-1],hash.getOrDefault(arr[i-1],0)-1);
-            if(hash.get(arr[i-1]) == 0)
-                hash.remove(arr[i-1]);
-            answer.append(hash.size()).append(" ");
-        }
-        System.out.println(answer);
-
-
     }
 }

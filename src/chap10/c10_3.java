@@ -26,6 +26,5 @@ N개의 자연수로 이루어진 수열이 주어졌을 때, 그 중에서 가�
 import java.io.*;
 public class c10_3 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
 }
