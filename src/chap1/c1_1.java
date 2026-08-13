@@ -25,7 +25,14 @@ c
 import java.io.*;
 public class c1_1 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));;
-        
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        char[] ch = br.readLine().toLowerCase().toCharArray();
+        char ch2 = br.readLine().charAt(0);
+        int answer=0;
+        for(int i=0;i<ch.length;i++){
+            if(ch[i]==ch2) answer++;
+        }
+        System.out.println(answer);
+
     }
 }
