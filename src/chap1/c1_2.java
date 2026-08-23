@@ -14,7 +14,7 @@ package chap1;
 출력
 첫 줄에 대문자는 소문자로, 소문자는 대문자로 변환된 문자열을 출력합니다.
 
-예시 입력 1
+예시 입력 1 
 StuDY
 
 예시 출력 1
@@ -23,5 +23,17 @@ sTUdy
 import java.io.*;
 public class c1_2 {
     public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        char[] ch = br.readLine().toCharArray();
+        char[] answer = new char[ch.length];
+        for(int i=0;i<ch.length;i++){
+            if(Character.isLowerCase(ch[i])){
+                answer[i]=Character.toUpperCase(ch[i]);
+            }
+            else answer[i] = Character.toLowerCase(ch[i]);
+            System.out.print(answer[i]);
+        }
+
+
     }
 }
