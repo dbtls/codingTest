@@ -24,5 +24,18 @@ study
 import java.io.*;
 public class c1_3 {
     public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s1 = br.readLine();
+        String[] s = s1.split(" ");
+        int max=0;
+        String answer = "";
+
+        for(int i=0;i<s.length;i++){
+            if(max<s[i].length()) {
+                max=s[i].length();
+                answer = s[i];
+            }
+        }
+        System.out.println(answer);
     }
 }
