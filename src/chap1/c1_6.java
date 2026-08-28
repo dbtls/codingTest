@@ -51,5 +51,18 @@ import java.util.*;
 
 public class c1_6 {
     public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        boolean[] isExist = new boolean[26];
+        StringBuilder answer = new StringBuilder();
+
+        for(int i=0;i<str.length();i++){
+            char ch = str.charAt(i);
+            if(!isExist[ch-'a']){
+                isExist[ch-'a']=true;
+                answer.append(ch);
+            }
+        }
+        System.out.println(answer);
     }
 }

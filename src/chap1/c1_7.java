@@ -24,5 +24,19 @@ YES
 import java.io.*;
 public class c1_7 {
     public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader ( new InputStreamReader(System.in));
+        String str = br.readLine().toLowerCase();
+        int len = str.length()-1;
+        StringBuilder answer = new StringBuilder();
+        for(int i=0; i<str.length()/2;i++){
+            if(!(str.charAt(i)==str.charAt(len-i))){
+                answer.append("NO");
+                break;
+            }
+        }
+        if(answer.isEmpty())
+            answer.append("YES");
+        System.out.println(answer);
+
     }
 }

@@ -29,10 +29,20 @@ import java.io.*;
 public class c1_4 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine().trim());
-        for(int i=0;i<n;i++){
-            StringBuilder sb = new StringBuilder(br.readLine());
-            System.out.println(sb.reverse());
+        int num = Integer.parseInt(br.readLine());
+        String[] answer = new String[num];
+
+        for(int i=0;i<num ; i++){
+            char[] ch = br.readLine().toCharArray();
+            for(int j=0;j<ch.length/2;j++){
+                char temp = ch[j];
+                ch[j]= ch[ch.length-1-j];
+                ch[ch.length-1-j]=temp;
+            }
+            answer[i] = String.valueOf(ch);
+        }
+        for(String s : answer){
+            System.out.println(s);
         }
     }
 }
