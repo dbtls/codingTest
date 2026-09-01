@@ -25,5 +25,19 @@ import java.io.*;
 import java.util.StringTokenizer;
 public class c2_2 {
     public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int num = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int target = 0;
+        int answer = 0;
+        for(int i=0;i<num;i++){
+            int n = Integer.parseInt(st.nextToken());
+            if(target<n){
+                answer++;
+                target=n;
+            }
+        }
+        System.out.println(answer);
     }
 }

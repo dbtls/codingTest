@@ -26,6 +26,39 @@ teachermode e
 import java.io.*;
 import java.util.*;
 public class c1_10 {
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
+        BufferedReader br =
+                new BufferedReader(new InputStreamReader(System.in));
+
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        String s1 = st.nextToken();
+        char target = st.nextToken().charAt(0);
+
+        int[] answer = new int[s1.length()];
+        int distance = 1000;
+
+        // 왼쪽에 있는 target과의 거리
+        for (int i = 0; i < s1.length(); i++) {
+            if (s1.charAt(i) == target) {
+                distance = 0;
+            } else {
+                distance++;
+            }
+
+            answer[i] = distance;
+        }
+
+        distance = 1000;
+
+        for(int i=s1.length()-1;i>=0;i--){
+            if(s1.charAt(i) == target) distance=0;
+            else distance++;
+            if(answer[i]>distance) answer[i]=distance;
+
+        }
+        for(int i :answer){
+            System.out.print(i+" ");
+        }
     }
 }

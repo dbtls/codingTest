@@ -27,6 +27,23 @@ import java.io.*;
 import java.util.*;
 
 public class c2_1 {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int num = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+
+        int target = 0;
+        StringBuilder answer = new StringBuilder();
+
+        for(int i=0;i<num;i++){
+            int n = Integer.parseInt(st.nextToken());
+            if(i==0||n>target){
+                answer.append(n).append(" ");
+            }
+            target=n;
+        }
+
+        System.out.println(answer);
     }
 }

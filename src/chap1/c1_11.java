@@ -30,5 +30,29 @@ KST3SE2KFK3DJ2G2
 import java.io.*;
 public class c1_11 {
     public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        char target = str.charAt(0);
+        int count=0;
+        StringBuilder answer = new StringBuilder();
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)!=target){
+                answer.append(target);
+                if(count>1){
+                    answer.append(count);
+                }
+                count=1;
+                target=str.charAt(i);
+            }
+            else count++;
+        }
+        if(count==1){
+            answer.append(target);
+        }
+        else{
+            answer.append(target);
+            answer.append(count);
+        }
+        System.out.println(answer);
     }
 }

@@ -40,5 +40,24 @@ COOL
 import java.io.*;
 public class c1_12 {
     public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int num = Integer.parseInt(br.readLine());
+        String str = br.readLine();
+        StringBuilder answer = new StringBuilder();
+
+        for (int i = 0; i < num; i++) {
+            int value = 0;
+
+            for (int j = i * 7; j < i * 7 + 7; j++) {
+                if(str.charAt(j)=='#') {
+                    value = value * 2 + 1;
+                }
+                else
+                    value = value *2;
+            }
+
+            answer.append((char) value);
+        }
+        System.out.println(answer);
     }
 }

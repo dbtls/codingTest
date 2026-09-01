@@ -35,5 +35,26 @@ import java.io.*;
 import java.util.*;
 public class c2_3 {
     public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int num = Integer.parseInt(br.readLine());
+        StringTokenizer stA = new StringTokenizer(br.readLine());
+        StringTokenizer stB = new StringTokenizer(br.readLine());
+        int[] aArr = new int[num];
+        int[] bArr = new int[num];
+        StringBuilder answer = new StringBuilder();
+
+        for(int i = 0;i<num;i++){
+            aArr[i] = Integer.parseInt(stA.nextToken());
+            bArr[i] = Integer.parseInt(stB.nextToken());
+        }
+
+        for(int i=0;i<num;i++){
+            switch ((aArr[i]-bArr[i]+3)%3){
+                case 1: answer.append("A").append("\n"); break;
+                case 2: answer.append("B").append("\n"); break;
+                default: answer.append("D").append("\n");
+            }
+        }
+        System.out.println(answer);
     }
 }
