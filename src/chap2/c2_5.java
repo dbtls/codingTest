@@ -22,6 +22,27 @@ package chap2;
 */
 import java.io.*;
 public class c2_5 {
+
     public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int num = Integer.parseInt(br.readLine());
+        int count =0;
+        int[] memo = new int[num+1];
+        memo[0]=1;
+        memo[1]=1;
+
+        for(int i=2;i<=num;i++){
+            if(memo[i]==1){
+                continue;
+            }
+            int now=i;
+            while(now<=num){
+                memo[now]=1;
+                now+=i;
+            }
+            count++;
+        }
+        System.out.println(count);
+
     }
 }

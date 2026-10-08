@@ -31,5 +31,86 @@ import java.util.*;
 
 public class c3_1 {
     public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n1 = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int[] arr1 = new int[n1];
+        for(int i=0;i<n1;i++){
+            arr1[i]=Integer.parseInt(st.nextToken());
+        }
+        int n2 = Integer.parseInt(br.readLine());
+        StringTokenizer st2 = new StringTokenizer(br.readLine());
+        int[] arr2 = new int[n2];
+        for(int i=0;i<n2;i++){
+            arr2[i]=Integer.parseInt(st2.nextToken());
+        }
+        int[] answer = new int[n1+n2];
+        int p1=0;
+        int p2=0;
+        int count=0;
+        while(p1<n1&&p2<n2){
+            if(arr1[p1]<=arr2[p2]){
+                answer[count] = arr1[p1];
+                p1++;
+                count++;
+            }
+            else{
+                answer[count]= arr2[p2];
+                p2++;
+                count++;
+            }
+        }
+        if(p1==n1){
+            for(int i=p2;i<n2;i++){
+                answer[count]=arr2[i];
+                count++;
+            }
+        }
+        else{
+            for(int i=p1;i<n1;i++){
+                answer[count]=arr1[i];
+                count++;
+            }
+        }
+
+
+        for(int n : answer){
+            System.out.print(n+" ");
+        }
+
+
     }
 }
+
+/*
+import java.io.*;
+import java.util.*;
+
+public class c3_1 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n1 = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int[] arr1 = new int[n1];
+        for (int i = 0; i < n1; i++) {
+            arr1[i] = Integer.parseInt(st.nextToken());
+        }
+        int n2 = Integer.parseInt(br.readLine());
+        StringTokenizer st2 = new StringTokenizer(br.readLine());
+        int[] arr2 = new int[n2];
+        for (int i = 0; i < n2; i++) {
+            arr2[i] = Integer.parseInt(st2.nextToken());
+        }
+        int[] answer = new int[n1 + n2];
+        for (int i = 0; i < n1; i++) {
+            answer[i] = arr1[i];
+        }
+        for (int i = n1; i < n2 + n1; i++) {
+            answer[i] = arr2[i - n1];
+        }
+        Arrays.sort(answer);
+        for (int n : answer) {
+            System.out.print(n + " ");
+        }
+    }
+}*/

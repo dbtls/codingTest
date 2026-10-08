@@ -32,5 +32,24 @@ import java.io.*;
 import java.util.*;
 public class c2_7 {
     public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int num  = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int[] arr = new int[num];
+        for(int i=0;i<num;i++){
+            arr[i] = Integer.parseInt(st.nextToken());
+        }
+        int count=0;
+        int answer = 0;
+
+        for(int n : arr){
+            if(n==0){
+                count =0;
+                continue;
+            }
+            count++;
+            answer+=count;
+        }
+        System.out.println(answer);
     }
 }

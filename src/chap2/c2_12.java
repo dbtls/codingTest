@@ -33,5 +33,37 @@ import java.util.*;
 
 public class c2_12 {
     public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader ( new InputStreamReader(System.in));
+        StringTokenizer st1 = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st1.nextToken());
+        int m = Integer.parseInt(st1.nextToken());
+        int[][] arr = new int [m][n];
+        for(int i=0;i<m;i++){
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            for(int j=0;j<n;j++){
+                arr[i][j]= Integer.parseInt(st.nextToken());
+            }
+        }
+        boolean[][] cannotMentor = new boolean[n][n];
+
+        for(int i=0;i<m;i++){
+            for(int j=n-1;j>=1;j--){
+                for(int z=j-1;z>=0;z--){
+                    cannotMentor[arr[i][j]-1][arr[i][z]-1]=true;
+                }
+            }
+        }
+        int count=0;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(i==j){
+                    continue;
+                }
+                if(!cannotMentor[i][j]){
+                    count++;
+                }
+            }
+        }
+        System.out.println(count);
     }
 }

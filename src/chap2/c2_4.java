@@ -22,6 +22,49 @@ package chap2;
 */
 import java.io.*;
 public class c2_4 {
+    static int[] memo= new int[45];
+    static int fibo(int n){
+        if(n<=1){
+            return memo[n]=1;
+        }
+        if(memo[n]!=0){
+            return memo[n];
+        }
+        return memo[n]=fibo(n-1)+fibo(n-2);
+    }
+
     public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int num = Integer.parseInt(br.readLine());
+        fibo(num-1);
+
+        for(int i=0;i<num;i++){
+            System.out.print(memo[i]+" ");
+        }
+
+    }
+
+}
+
+/*
+import java.io.*;
+
+public class c2_4{
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int num = Integer.parseInt(br.readLine());
+        int[] arr = new int[num];
+        arr[0]=1;
+        arr[1]=1;
+        for(int i=2;i<num;i++){
+            arr[i]=arr[i-1]+arr[i-2];
+        }
+        for(int n : arr){
+            System.out.print(n+" ");
+        }
     }
 }
+*/
+
+
+

@@ -31,5 +31,34 @@ import java.io.*;
 import java.util.*;
 public class c2_9 {
     public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int num = Integer.parseInt(br.readLine());
+        int[][] arr = new int[num][num];
+
+        for(int i=0;i<num;i++){
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            for(int j=0;j<num;j++){
+                arr[i][j]=Integer.parseInt(st.nextToken());
+            }
+        }
+        int[] sumX = new int[num];
+        int[] sumY = new int[num];
+        int[] sumXY = new int[2];
+        for(int i=0;i<num;i++){
+            for(int j=0;j<num;j++){
+                sumX[i]+=arr[i][j];
+                sumY[j]+=arr[i][j];
+                if(i==j) sumXY[0]+=arr[i][j];
+                if(i+j==num-1) sumXY[1]+=arr[i][j];
+            }
+        }
+
+        int max = Math.max(sumXY[0],sumXY[1]);
+
+        for(int i=0;i<num;i++){
+            max = Math.max(max,sumX[i]);
+            max = Math.max(max,sumY[i]);
+        }
+        System.out.println(max);
     }
 }

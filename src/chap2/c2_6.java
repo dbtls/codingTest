@@ -26,6 +26,43 @@ N개의 자연수가 입력되면 각 자연수를 뒤집은 후 그 뒤집은 �
 import java.io.*;
 import java.util.*;
 public class c2_6 {
+    static int reverse(int num){
+        int result=0;
+        while(num >0){
+            result= result *10 + num%10;
+            num=num/10;
+        }
+        return result;
+
+    }
+
     public static void main(String[] args) throws IOException{
+        StringBuilder answer = new StringBuilder();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int num = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int[] arr = new int[num];
+        int[] memo = new int[100001];
+        memo[1]=1;
+        for(int i=0;i<num;i++){
+            arr[i] = Integer.parseInt(st.nextToken());
+        }
+        for(int i=2;i<=100000;i++){
+            if(memo[i]==1){
+                continue;
+            }
+            int now = i+i;
+            while(now <=100000){
+                memo[now]=1;
+                now+=i;
+            }
+        }
+        for(int i=0;i<num;i++){
+            int rev = reverse(arr[i]);
+            if(memo[rev]==0){
+                answer.append(rev).append(' ');
+            }
+        }
+        System.out.println(answer.toString().trim());
     }
 }
